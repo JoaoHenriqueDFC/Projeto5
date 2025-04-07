@@ -1,50 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
-    border: 0;
+    box-sizing: border-box; 
     background-color: #f8f9fa;
 }
 
 .container {
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    height:85px;
-    background-color: white;
-    box-shadow: 0px 4px 40px -15px #00000040;
-  }
-
-  .titulo{
-    color: #4C6EF5;
-    font-size: 24px;
-    height: 30px;
-    background-color: white;
-    font-family: 'Inter', sans-serif;
-}
-
-.lista{
     display: flex;
     justify-content: space-between;
-    width: 600px;
-    padding-left:1000px;
-    height: 20px;
+    align-items: center;
+    padding: 0 20px; 
+    width: 100%;
+    height: 85px;
     background-color: white;
+    box-shadow: 0px 4px 40px -15px #00000040;
+}
+
+.titulo {
+    color: #4C6EF5;
+    font-size: 24px;
     font-family: 'Inter', sans-serif;
 }
 
-.lista li{
-     display: inline;
-     list-style: none;
-     background-color: white;
+.lista {
+    display: flex;
+    gap: 10px;       
+    flex-wrap: wrap; 
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    max-width: 100%; 
+    justify-content: center;
 }
 
-.lista li:hover{
+.lista li {
+    list-style: none;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.lista li:hover {
     color: #4C6EF5;
     text-decoration: underline;
     text-decoration-thickness: 2px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .titulo {
+        font-size: 20px;
+    }
+
+    .lista li {
+        font-size: 14px;
+    }
 }
